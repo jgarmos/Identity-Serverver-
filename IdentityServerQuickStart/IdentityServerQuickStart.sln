@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "identityServerQuickStart", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{0E417156-C508-45AF-87B6-1CD3C6A39354}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{4C9B9416-2442-4408-921B-A91B73BDB782}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0E417156-C508-45AF-87B6-1CD3C6A39354}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E417156-C508-45AF-87B6-1CD3C6A39354}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E417156-C508-45AF-87B6-1CD3C6A39354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9B9416-2442-4408-921B-A91B73BDB782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9B9416-2442-4408-921B-A91B73BDB782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9B9416-2442-4408-921B-A91B73BDB782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9B9416-2442-4408-921B-A91B73BDB782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
