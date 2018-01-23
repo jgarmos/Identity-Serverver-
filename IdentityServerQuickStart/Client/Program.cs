@@ -23,12 +23,12 @@ namespace Client
                 return;
             }
 
-            
+
 
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
 
             if (tokenResponse.IsError)
             {
@@ -36,7 +36,12 @@ namespace Client
                 return;
             }
 
-            
+            Console.WriteLine(tokenResponse.Json);
+            Console.WriteLine("\n\n");
+
+
+
+
             Console.WriteLine(tokenResponse.Json);
 
             // call api
