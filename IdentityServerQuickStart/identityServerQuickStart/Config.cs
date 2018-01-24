@@ -64,23 +64,27 @@ namespace identityServerQuickStart
                 {
                     ClientId = "mvc",
                     ClientName = "MVC Client",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
-                    // where to redirect to after login
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
 
-                    // where to redirect to after logout
+                    RedirectUris           = { "http://localhost:5002/signin-oidc" },
                     PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
-                    AllowedScopes = new List<string>
+                    AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
-                    }
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
                 }
 
 
-            };
+        };
         }
 
         public static List<TestUser> GetUsers()
@@ -88,29 +92,29 @@ namespace identityServerQuickStart
             return new List<TestUser>
             {
                 new TestUser
-                {
-                    SubjectId = "1",
-                    Username = "alice",
-                    Password = "password",
+        {
+            SubjectId = "1",
+            Username = "alice",
+            Password = "password",
 
-                    Claims = new []
-                    {
-                        new Claim("name", "Alice"),
-                        new Claim("website", "https://alice.com")
-                    }
-                },
-                new TestUser
-                {
-                    SubjectId = "2",
-                    Username = "bob",
-                    Password = "password",
+            Claims = new []
+            {
+                new Claim("name", "Alice"),
+                new Claim("website", "https://alice.com")
+            }
+        },
+        new TestUser
+        {
+            SubjectId = "2",
+            Username = "bob",
+            Password = "password",
 
-                    Claims = new []
-                    {
-                        new Claim("name", "Bob"),
-                        new Claim("website", "https://bob.com")
-                    }
-                }
+            Claims = new []
+            {
+                new Claim("name", "Bob"),
+                new Claim("website", "https://bob.com")
+            }
+        }
 
             };
         }
